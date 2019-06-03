@@ -9,6 +9,20 @@ package Modèle;
  *
  * @author Junayet
  */
-public class Eleve {
+public class Eleve extends PersonnageImpemented {
+     
+    public Eleve(int Id, String Nom, String Prenom)
+    {
+        super(Id,Nom,Prenom);
+        type="eleve";
+    }
+
+    public void setNom(String Nom) {
+        this.Nom = Nom;
+    }
+
+    public void setPrenom(String Prenom) {
+        this.Prenom = Prenom;
+    }
     
 }

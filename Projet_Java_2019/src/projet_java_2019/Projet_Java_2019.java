@@ -6,6 +6,7 @@
 package projet_java_2019;
 import Modèle.*;
 import Graphique.*;
+import java.util.*;
 /**
  *
  * @author Junayet
@@ -17,9 +18,14 @@ public class Projet_Java_2019 {
      */
     public static void main(String[] args) {
        
-        try{Connexion connec= new Connexion("ece_amazon","root","");}
+       
+        try{Connexion co= new Connexion("java2019","root","");
+         
+        System.out.println(co.remplirChampsRequete("SELECT * FROM `personne` WHERE 1"));
+        }
         catch(Exception e){System.out.println("erreur BDD");}
-        new Menu_Principal();
+        //new Menu_Principal();
+        new co();
     }
     
 }
