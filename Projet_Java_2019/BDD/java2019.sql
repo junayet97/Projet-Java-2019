@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 03 juin 2019 à 11:38
+-- Généré le :  mar. 04 juin 2019 à 14:05
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -189,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `id_personne` int(255) NOT NULL AUTO_INCREMENT,
   `nom_pers` varchar(255) NOT NULL,
   `prenom_pers` varchar(255) NOT NULL,
-  `type_pers` varchar(1) NOT NULL,
+  `type_pers` varchar(255) NOT NULL,
   PRIMARY KEY (`id_personne`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
