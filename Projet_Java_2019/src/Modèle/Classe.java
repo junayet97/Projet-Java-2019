@@ -7,7 +7,7 @@ package Modèle;
 
 /**
  *
- * @author Junayet
+ * @author Juju
  */
 public class Classe {
     private int id;
