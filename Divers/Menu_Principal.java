@@ -27,32 +27,19 @@ import java.awt.event.ActionEvent;
 
 public class Menu_Principal extends JFrame implements ActionListener 
 {
+    
+    private JPanel page;
     private JButton recherche;
     private JButton miseaj;
     private JButton reporting;
     private JButton quitter;
-    Container fenetre;
-    
-   
-    
-    /*
-    JPanel tete = new JPanel();
-    JLabel titre = new JLabel("Bienvenue dans la page de gestion de l'école");
-    
-    JLabel tag = new JLabel("MENU PRINCIPAL");
-    JPanel panel= new JPanel();
-    
-    JButton Bouton = new JButton("Recherches");
-    JButton Bouton2 = new JButton("Mise à Jour");
-    JButton Bouton3 = new JButton("Reporting");
-    JButton Bouton4 = new JButton("Quitter");*/
-    
+  
 
     public Menu_Principal() 
     {
         //Initialisation
-        JPanel page = new JPanel();
-        JPanel cadre =new JPanel();
+        this.page = new JPanel();
+        
         
         JLabel fond = new JLabel();
         JLabel gtitre = new JLabel();
@@ -95,18 +82,7 @@ public class Menu_Principal extends JFrame implements ActionListener
         page.add(titremenu);
         titremenu.setBounds(300, 170, 80, 40);
         
-        //Petit cadre
-        cadre.setLayout(null);
-        cadre.setBackground(new java.awt.Color(133, 117, 179));
-        cadre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        page.add(cadre);
-        cadre.setBounds(260, 220, 160, 210);
-        
-        javax.swing.GroupLayout cadreLayout = new javax.swing.GroupLayout(cadre);
-        cadre.setLayout(cadreLayout);
-        
-        
-        
+       
         
         //LOGO ECE
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphique/logoECE.jpg"))); // NOI18N
@@ -129,114 +105,38 @@ public class Menu_Principal extends JFrame implements ActionListener
         //Bouton quitter
         quitter.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         quitter.setText("Quitter");
-        cadre.add(quitter);
+        page.add(quitter);
+        quitter.setBounds(550, 430, 90, 31);
        
         
         
         //Bouton recherche
         recherche.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         recherche.setText("Recherche");
-        cadre.add(recherche);
+        page.add(recherche);
+        recherche.setBounds(290, 220, 110, 40);
         
         //bouton mise à jour
         miseaj.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         miseaj.setText("Mise à jour");
-        cadre.add(miseaj);
-        
+        page.add(miseaj);
+        miseaj.setBounds(290, 280, 110, 40);
         
         //bouton reporting
         reporting.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
         reporting.setText("Reporting");
-        cadre.add(reporting);
+        page.add(reporting);
+        reporting.setBounds(290, 340, 110, 40);
         
+        //actions des boutons
+        quitter.addActionListener(this);
+        recherche.addActionListener(this);
+        miseaj.addActionListener(this);
+        reporting.addActionListener(this);
         
-       
-        
-      
-
-        
-        
-        
-        
-        
-        
-        
-        
-        /*
-        
-        //Fenetre
-        this.fenetre=this.getContentPane();
-        fenetre.setBackground(Color.GRAY);
-        fenetre.setLayout(new FlowLayout(FlowLayout.CENTER));
-        
-        GridBagConstraints constraints = new GridBagConstraints();
-        constraints.anchor = GridBagConstraints.CENTER;
-        constraints.insets = new Insets(10, 10, 10, 10);
-        
-        //Titre page
-        constraints.anchor = GridBagConstraints.CENTER;
-        tete.setBackground(Color.GRAY);
-        titre.setFont(new Font("courier new", Font.BOLD, 40));
-        titre.setForeground(Color.PINK);
-        tete.add(titre);
-        
-        //Tag titre 
-        constraints.anchor = GridBagConstraints.CENTER;
-        tag.setFont(new Font("courier new", Font.BOLD, 25));
-        tag.setForeground(Color.PINK);
-       
-        //cadre à bouton
-        constraints.gridx = 0;
-        constraints.gridy = 1;
-        constraints.anchor = GridBagConstraints.CENTER;
-        panel.setLayout(new GridLayout(6,10,50,50));
-        panel.setBackground(Color.GRAY);
-
-        
-        //Bouton RECHERCHE
-        constraints.anchor = GridBagConstraints.CENTER;
-        Bouton.setFont(new Font("courier new", Font.BOLD, 25));
-        Bouton.setForeground(Color.BLACK);
-        Bouton.setBorder(BorderFactory.createEmptyBorder(20,10,10,10));
-        
-        //Bouton MAJ
-        Bouton2.setFont(new Font("courier new", Font.BOLD, 25));
-        Bouton2.setForeground(Color.BLACK);
-        Bouton2.setBorder(BorderFactory.createEmptyBorder(20,10,10,10));
-        
-        //Boutonn REPORTING
-        Bouton3.setFont(new Font("courier new", Font.BOLD, 25));
-        Bouton3.setForeground(Color.BLACK);
-        Bouton3.setBorder(BorderFactory.createEmptyBorder(20,10,10,10));
-        
-        //Bouton QUITTER
-        Bouton4.setFont(new Font("courier new", Font.BOLD, 25));
-        Bouton4.setForeground(Color.BLACK);
-        Bouton4.setBorder(BorderFactory.createEmptyBorder(20,10,10,10));
-        
-        
-        Bouton.addActionListener(this);
-        Bouton2.addActionListener(this);
-        Bouton3.addActionListener(this);
-        Bouton4.addActionListener(this);
-        
-        
-        
-        panel.add(tag);
-        panel.add(Bouton);
-        panel.add(Bouton2);
-        panel.add(Bouton3);
-        panel.add(Bouton4);
-        
-        */
-        
-        
-        fenetre.add(page);
-        fenetre.add(cadre);
-       
-       
-  
         setVisible(true);
+        add(page);
+        
         pack();
         
     }
@@ -244,6 +144,7 @@ public class Menu_Principal extends JFrame implements ActionListener
     
     
    
+    @Override
     public  void actionPerformed(ActionEvent event)
     {
         if(event.getSource()== recherche)
@@ -251,14 +152,14 @@ public class Menu_Principal extends JFrame implements ActionListener
             this.dispose();
             new Recherche();
         }
-        if(event.getSource()==miseaj)
+        if(event.getSource()== miseaj)
         {
             this.dispose();
             new Maj();
         }
         if(event.getSource()== reporting)
         {
-            JOptionPane.showMessageDialog(fenetre, "Disponible Prochainement!!!\n Essayez un autre mode...");
+            JOptionPane.showMessageDialog(page, "Disponible Prochainement!!!\n Essayez un autre mode...");
         }
         if(event.getSource()== quitter)
         {           
