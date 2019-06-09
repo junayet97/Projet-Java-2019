@@ -6,7 +6,7 @@
 package Modèle;
 
 /**
- *
+ 
  * @author Junayet
  */
 public class Enseignant extends PersonnageImpemented {
